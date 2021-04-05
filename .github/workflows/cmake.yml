@@ -4,7 +4,8 @@ on: [push]
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
-  BUILD_TYPE: Release
+  BUILD_TYPE: Debug
+  CODECOV_TOKEN: "0bed60b8-fc5c-4a89-adaf-afbc8b8246a8"
 
 jobs:
   build:
@@ -47,3 +48,10 @@ jobs:
       # Execute tests defined by the CMake configuration.  
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest -C $BUILD_TYPE
+
+    - name: Run and upload codecov
+      working-directory: ${{github.workspace}}/build
+      shell: bash
+      run: gcov -o CMakeFiles/sample.dir/src/sample.cpp.gcno ../src/sample.cpp && bash <(curl -s https://codecov.io/bash) 
+
+

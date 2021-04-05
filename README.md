@@ -1,5 +1,8 @@
 # Sciware Testing Examples and Exercises
 
+[![](https://github.com/flatironinstitute/sciware-testing-cpp/actions/workflows/cmake.yml/badge.svg)](https://github.com/flatironinstitute/sciware-testing-cpp/actions/workflows/cmake.yml/)
+[![codecov](https://codecov.io/gh/flatironinstitute/sciware-testing-cpp/branch/main/graph/badge.svg?token=99NU99TVDH)](https://codecov.io/gh/flatironinstitute/sciware-testing-cpp)
+
 This is an example repository for writing tests, for the Sciware Testing session.
 
 
@@ -8,7 +11,7 @@ This is an example repository for writing tests, for the Sciware Testing session
 ### Software Prerequisites
 
 - [`cmake`](https://cmake.org/download/)
-- C++ compiler
+- C++ compiler with C++17 support (or higher)
 
 ### Build
 ```bash
@@ -20,9 +23,6 @@ make
 make test
 ```
 
-## CMake
-
-## 
 
 ## Credit
 A large portion of this project was inspired by and borrowed from @filipdetescu's project [`modern-cpp-template`](https://github.com/filipdutescu/modern-cpp-template).

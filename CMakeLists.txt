@@ -11,9 +11,16 @@ if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
   message(FATAL_ERROR "Building in the main project directory is not allowed. Please make a new directory (called a build directory) and run CMake from there.\n")
 endif()
 
+#
+# Options
+#
+
 set(CMAKE_CXX_STANDARD 17 CACHE STRING "C++ version selection")  # or 11, 14, 17, 20
 set(CMAKE_CXX_STANDARD_REQUIRED ON)  # optional, ensure standard is supported
 
+# TODO: Need to update this for other compilers
+set(CMAKE_CXX_FLAGS_DEBUG "-g --coverage")
+# set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE ON)
 
 #
 # Building the project
@@ -25,6 +32,7 @@ set(SAMPLE_SOURCES
 )
 
 add_library(sample SHARED ${SAMPLE_SOURCES})
+target_link_libraries(sample "--coverage")
 
 #
 # Build test
@@ -35,3 +43,9 @@ add_library(sample SHARED ${SAMPLE_SOURCES})
 
 enable_testing() 
 add_subdirectory(test)
+
+#
+# Code Coverage
+#
+
+# setup_target_for_coverage_fastcov(${PROJECT_NAME}_coverage test_add_vector coverage)
