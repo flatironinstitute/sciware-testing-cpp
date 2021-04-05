@@ -11,7 +11,7 @@ This is an example repository for writing tests, for the Sciware Testing session
 ### Software Prerequisites
 
 - [`cmake`](https://cmake.org/download/)
-- C++ compiler with C++17 support (or higher)
+- C++ compiler with C++11 support (or higher)
 
 ### Build
 ```bash
