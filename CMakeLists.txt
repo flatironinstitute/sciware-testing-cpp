@@ -30,10 +30,8 @@ add_library(sample SHARED ${SAMPLE_SOURCES})
 # Build test
 #
 
-enable_testing()
+# Make sure `enable_testing()` is in the top CMakeLists.txt file
+# For more details see https://cmake.org/cmake/help/latest/command/enable_testing.html#command:enable_testing
 
-# Make test executable
-add_executable(tests ${CMAKE_SOURCE_DIR}/test/test_add_vectors.cpp)
-target_include_directories(tests PUBLIC ${CMAKE_SOURCE_DIR}/external/doctest/doctest)
-target_link_libraries(tests PRIVATE sample)
-add_test(NAME test_add_vector COMMAND tests)
+enable_testing() 
+add_subdirectory(test)
