@@ -15,7 +15,7 @@ This is an example repository for writing tests, for the Sciware Testing session
 
 ### Build
 ```bash
-git clone --recursive git@github.com:flatironinstitute/sciware-testing-cpp.git
+git clone https://github.com/flatironinstitute/sciware-testing-cpp.git
 cd sciware-testing-cpp
 mkdir build && cd build
 cmake ..
