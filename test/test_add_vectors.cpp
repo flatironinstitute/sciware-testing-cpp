@@ -4,6 +4,30 @@
 #include <sample.hpp>
 #include <random>
 
+TEST_CASE("Test Adding Empty Vectors")
+{
+    std::vector<double> x(0);
+    auto y = add_vectors(x, x);
+
+    // Check that we got the right answer
+    CHECK(y.size() == 0);
+}
+
+TEST_CASE("Test Adding Singleton Vectors")
+{
+    std::vector<double> x = {2};
+    std::vector<double> y = {3};
+    auto z = add_vectors(x, y);
+
+    // Check that we got the right answer
+    CHECK(z.size() == 1);
+    CHECK(z[0] == 5);
+
+    // Check that we didn't modify the original vectors
+    CHECK(x[0] == 2);
+    CHECK(y[0] == 3);
+}
+
 TEST_CASE("Test Adding Vectors")
 {
     // Set up RNG
