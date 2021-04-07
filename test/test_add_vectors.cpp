@@ -31,8 +31,10 @@ TEST_CASE("Test Adding Singleton Vectors")
 TEST_CASE("Test Adding Vectors")
 {
     // Set up RNG
-    std::random_device rd;
-    std::default_random_engine eng(rd());
+    // Setting the seed (rather than a random device) guarantees that the same sequence will be
+    // generated regardless of platform
+    const long int seed = 10;
+    std::default_random_engine eng(seed);
     std::uniform_real_distribution<double> distr(10, 100);
 
     // Set up vector
