@@ -12,6 +12,7 @@ This is an example repository for writing tests, for the Sciware Testing session
 
 - [`cmake`](https://cmake.org/download/)
 - C++ compiler with C++11 support (or higher)
+- [doctest](https://github.com/onqtam/doctest)
 
 ### Build
 ```bash
